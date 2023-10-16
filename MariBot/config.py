@@ -5,8 +5,8 @@ from edamino import Bot
 
 load_dotenv('.env')
 
-EMAIL = getenv('oigresergio14@hotmail.com')
-PASSWORD = getenv('30757223')
+EMAIL = getenv('')
+PASSWORD = getenv('')
 
 bot = Bot(email=EMAIL, password=PASSWORD, prefix="/")
 
