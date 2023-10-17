@@ -3991,14 +3991,7 @@ async def on_cargo(ctx: Context):
             else:
                 await ctx.reply(f"[C]{system_messages[240]} FATAL ERROR")
             
-#UNIR A CHAT
-@bot.command('currentjoin')
-async def join_chat(self):
-   if self.msg.author.uid in veted_list:
-        print("USUARIO VETADO")
-   else:
-        print(f"{self.msg.content} usado por {self.msg.author.nickname}")
-        await self.client.join_chat(self.msg.threadId)
+
         
 #DEJAR CHAT
 @bot.command("leaveout")
