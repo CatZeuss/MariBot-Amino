@@ -6270,7 +6270,7 @@ async def on_youtube_music_download(ctx: Context):
             video = yt.streams.filter(only_audio=True).first()  #####
             
             print("yt.streams.filter()")
-            destination = "/storage/emulated/0/aminobot"
+            destination = "audios"
             out_file = video.download(output_path=destination)
   
 
@@ -6280,7 +6280,7 @@ async def on_youtube_music_download(ctx: Context):
             
             
             
-            audio = File.load("ytload_command.mp3")
+            audio = File.load("audios/ytload_command.mp3")
             try:
                 await ctx.send_audio(audio)
                 print("sucess")
@@ -6385,56 +6385,56 @@ async def on_youtube_music_download(ctx: Context):
 #             if "auron" in namel:
 #                 try:
 #                 	await fy.say(text=args, ttsModelToken=auron)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                 except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "bart" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=bart, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "spongebob" in namel or "bob" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=spongebob, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "calamardo" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=calamardo, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "dvader" in namel or "darth" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=darthv, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "toxomoroxo" in namel or "detoxomoroxo" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=dtxmrx, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "doctops" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=doctops, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "doki" in namel:
 #                try:
 #                     await fy.say(text=args, ttsModelToken=doki, cooldown=10)
-#                     audio = File.load("fakeyou.wav")
+#                     audio = File.load("audios/fakeyou.wav")
             	    
 #                     await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
@@ -6442,42 +6442,42 @@ async def on_youtube_music_download(ctx: Context):
 #             elif "dramon" in namel or "donramon" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=rondamon, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "dbz" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=dbznarrator, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "xocas" in namel or "xokas" in namel or "chocas" in namel or "chokas" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=xocas, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "cartman" in namel or "eric" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=cartman, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "fernan" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=fernan, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "freezer" in namel or "frieza" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=frieza, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
@@ -6485,35 +6485,35 @@ async def on_youtube_music_download(ctx: Context):
 #             elif "omero" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=homero, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "juan" in namel or "jguarnizo" in namel or "juanguarnizo" in namel or "juansguarnizo" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=jguarnizo, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "mesi" in namel or "messi" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=messi, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "luisito" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=luisito, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "marge" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=marge, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
@@ -6521,49 +6521,49 @@ async def on_youtube_music_download(ctx: Context):
 #             elif "shakira" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=shakira, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "sonic" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=sonic, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "toreto" in namel or "toretto" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=toretto, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "cosmo" in namel or "cosmó" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=cosmo, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "vegeta" in namel or "vegetta" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=vegetta, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "white" in namel or "walter" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=mrwhite, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
 #             elif "wbonner" in namel or "william" in namel or "bonner" in namel:
 #                try:
 #                 	await fy.say(text=args, ttsModelToken=wbonner, cooldown=10)
-#                 	audio = File.load("fakeyou.wav")
+#                 	audio = File.load("audios/fakeyou.wav")
 #                 	await ctx.send_audio(audio)
 #                except fakeyou.exception.TooManyRequests:
 #                 	await ctx.reply(f"[C]{system_messages[120]} - Cooldown")
@@ -7185,14 +7185,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "gu"
             sp = gTTS(
             text = args,
             lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7204,14 +7204,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "vi"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7223,14 +7223,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "ur"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7242,14 +7242,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "uk"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7261,14 +7261,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "tr"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7280,14 +7280,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "tl"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7299,14 +7299,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "sr"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7318,14 +7318,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "sq"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7337,14 +7337,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "sk"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7356,14 +7356,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "ro"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7375,14 +7375,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "sv"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7394,14 +7394,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "pl"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7413,14 +7413,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "no"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7432,14 +7432,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "nl"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7451,14 +7451,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "ne"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7470,14 +7470,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "my"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7489,14 +7489,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "ms"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7508,14 +7508,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "mk"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7527,14 +7527,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "lv"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7546,14 +7546,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "la"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7565,14 +7565,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "jw"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7585,14 +7585,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "iw"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7604,14 +7604,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "is"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7623,14 +7623,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "id"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7642,14 +7642,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "hy"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7661,14 +7661,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "hu"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7680,14 +7680,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "hr"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7699,14 +7699,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "hi"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7718,14 +7718,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "fi"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7738,14 +7738,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "et"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7757,14 +7757,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "eo"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7776,14 +7776,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "el"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7795,14 +7795,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "da"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7814,14 +7814,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "cy"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7833,14 +7833,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "cs"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7852,14 +7852,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "ca"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7871,14 +7871,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "bs"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7890,14 +7890,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiobg.mp3"
+            audio = "audios/audiobg.mp3"
             language = "bg"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiobg.mp3")
+            siri = File.load("audios/audiobg.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7909,14 +7909,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audioaf.mp3"
+            audio = "audios/audioaf.mp3"
             language = "af"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audioaf.mp3")
+            siri = File.load("audios/audioaf.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7928,14 +7928,14 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiokr.mp3"
+            audio = "audios/audiokr.mp3"
             language = "ko"
             sp = gTTS(
                     text = args,
                     lang = language
             )
             sp.save(audio)
-            siri = File.load("audiokr.mp3")
+            siri = File.load("audios/audiokr.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7947,7 +7947,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audio.mp3"
+            audio = "audios/audio.mp3"
             language = "es"
 
             sp = gTTS(
@@ -7956,7 +7956,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audio.mp3")
+            siri = File.load("audios/audio.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7968,7 +7968,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiopt.mp3"
+            audio = "audios/audiopt.mp3"
             language = "pt-br"
 
             sp = gTTS(
@@ -7977,7 +7977,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audiopt.mp3")
+            siri = File.load("audios/audiopt.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -7989,7 +7989,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audioen.mp3"
+            audio = "audios/audioen.mp3"
             language = "en"
 
             sp = gTTS(
@@ -7998,7 +7998,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audioen.mp3")
+            siri = File.load("audios/audioen.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8010,7 +8010,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audioar.mp3"
+            audio = "audios/audioar.mp3"
             language = "ar"
 
             sp = gTTS(
@@ -8019,7 +8019,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audioar.mp3")
+            siri = File.load("audios/audioar.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8031,7 +8031,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiofr.mp3"
+            audio = "audios/audiofr.mp3"
             language = "fr"
 
             sp = gTTS(
@@ -8040,7 +8040,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audiofr.mp3")
+            siri = File.load("audios/audiofr.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8052,7 +8052,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiojp.mp3"
+            audio = "audios/audiojp.mp3"
             language = "ja"
 
             sp = gTTS(
@@ -8061,7 +8061,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audiojp.mp3")
+            siri = File.load("audios/audiojp.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8073,7 +8073,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audioch.mp3"
+            audio = "audios/audioch.mp3"
             language = "zh"
 
             sp = gTTS(
@@ -8082,7 +8082,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audioch.mp3")
+            siri = File.load("audios/audioch.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8094,7 +8094,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audioit.mp3"
+            audio = "audios/audioit.mp3"
             language = "it"
 
             sp = gTTS(
@@ -8103,7 +8103,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audioit.mp3")
+            siri = File.load("audios/audioit.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8115,7 +8115,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audioru.mp3"
+            audio = "audios/audioru.mp3"
             language = "ru"
 
             sp = gTTS(
@@ -8124,7 +8124,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audioru.mp3")
+            siri = File.load("audios/audioru.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -8137,7 +8137,7 @@ async def on_siri(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            audio = "audiode.mp3"
+            audio = "audios/audiode.mp3"
             language = "de"
 
             sp = gTTS(
@@ -8146,7 +8146,7 @@ async def on_siri(ctx: Context, args: str):
             )
 
             sp.save(audio)
-            siri = File.load("audiode.mp3")
+            siri = File.load("audios/audiode.mp3")
             await ctx.send_audio(siri)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
