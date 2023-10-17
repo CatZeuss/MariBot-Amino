@@ -2231,7 +2231,7 @@ async def on_valorate(ctx: Context):
                 with ctx.set_ndc(link_id):
                     await ctx.join_community()
                 
-                    await ctx.client.send_message(message=f"+reseña de {intstars} estrellas usado por {linkuser}\n• Reseña: {value}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
+                    await ctx.client.send_message(message=f"Reseña de {intstars} estrellas usado por {linkuser}\n• Reseña: {value}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
             else:
                 await ctx.reply(f"[C]{system_messages[180]} - Te faltó una breve reseña de tu opinión sobre el bot. \n\n[C]Por ejemplo: '+reseña 4 Me gustó el bot pero hay cosas que podría mejorar.'")
         else:
@@ -2263,7 +2263,7 @@ async def on_suggest(ctx: Context, link: str = "http://aminoapps.com/c/MeArrobar
             with ctx.set_ndc(link_id):
                 await ctx.join_community()
                 
-                await ctx.client.send_message(message=f"+sugerencia usado por {linkuser}\n• Sugerencia: {suggest}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
+                await ctx.client.send_message(message=f"Sugerencia usado por {linkuser}\n• Sugerencia: {suggest}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
                 
                 
         elif suggest == "" or suggest == " ":
@@ -2294,7 +2294,7 @@ async def on_report(ctx: Context, link: str = "http://aminoapps.com/c/MeArrobaro
             with ctx.set_ndc(link_id):
                 await ctx.join_community()
                 
-                await ctx.client.send_message(message=f"+reporte usado por {linkuser}\n• Contexto: {report}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
+                await ctx.client.send_message(message=f"Reporte usado por {linkuser}\n• Contexto: {report}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
                 
                 
         elif report == "" or report == " ":
@@ -2325,7 +2325,7 @@ async def on_report(ctx: Context, link: str = "http://aminoapps.com/c/MeArrobaro
             with ctx.set_ndc(link_id):
                 await ctx.join_community()
                 
-                await ctx.client.send_message(message=f"+bug usado por {linkuser}\n• Error: {bug}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
+                await ctx.client.send_message(message=f"Bug usado por {linkuser}\n• Error: {bug}", chat_id= "8bf7dfcb-e030-41c3-83b2-6cd84e2b8574")
         elif bug is None:
             await ctx.client.send_message(message=f"[C]{system_messages[180]} - Debes escribir el bug que el bot está presentando después del comando, recuerda que éste comando es SOLO para reportes bugs en el bot.", chat_id=ctx.msg.threadId)
 
