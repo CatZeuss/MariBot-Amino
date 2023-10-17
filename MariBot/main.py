@@ -715,14 +715,14 @@ Public License instead of this License.  But first, please read
     re
     pillow
     faker
-    newsapi
-    lyrics_extractor
+    newsapi-python
+    lyrics-extractor
     colorama
     wikipedia
     pyjokes
     opencv
     openai
-    youtubesearchpython
+    youtube-search-python
     pytube
     ast
     fakeyou (EN DESUSO DEBIDO A PROBLEMAS DE DESEMPEÑO)
