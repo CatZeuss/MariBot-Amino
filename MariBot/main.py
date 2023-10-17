@@ -715,7 +715,7 @@ Public License instead of this License.  But first, please read
     re
     pillow
     faker
-    newsapi
+    newsapi-python
     lyrics_extractor
     colorama
     wikipedia
