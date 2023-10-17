@@ -722,7 +722,7 @@ Public License instead of this License.  But first, please read
     pyjokes
     opencv
     openai
-    youtubesearchpython
+    youtube-search-python
     pytube
     ast
     fakeyou (EN DESUSO DEBIDO A PROBLEMAS DE DESEMPEÑO)
