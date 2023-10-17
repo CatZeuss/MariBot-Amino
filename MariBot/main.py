@@ -1862,8 +1862,8 @@ async def on_OCR(ctx: Context):
             media_value = ctx.msg.extensions.replyMessage.mediaValue
             if media_value is not None:
                 await ctx.send("[C]Leyendo imagen...")
-                urllib.request.urlretrieve(f"{media_value}", "OCR_command.jpg")
-                image = "OCR_command.jpg"
+                urllib.request.urlretrieve(f"{media_value}", "images/OCR_command.jpg")
+                image = "images/OCR_command.jpg"
                 result = await ocr_exec(filename=image)
                 
                 count = 0
@@ -1892,8 +1892,8 @@ async def on_read_QR_code(ctx: Context):
             media_value = ctx.msg.extensions.replyMessage.mediaValue
             if media_value is not None:
                 await ctx.send("[C]Decodificando imagen, por favor, espere...")
-                images = urllib.request.urlretrieve(f"{media_value}", "image_read_QR_code_command.jpg")
-                ficheroQR = "image_read_QR_code_command.jpg"
+                images = urllib.request.urlretrieve(f"{media_value}", "images/image_read_QR_code_command.jpg")
+                ficheroQR = "images/image_read_QR_code_command.jpg"
                 
         
                 img = cv2.imread(ficheroQR)
@@ -2273,7 +2273,7 @@ async def on_stats(ctx: Context):
         scripters = data[0]["scripter"] + data[0]["iplogger"]
         spammers = data[0]["spammer"] + data[0]["spambot"]
         
-        image = Image.open("stats.jpg")
+        image = Image.open("images/stats.jpg")
         draw = ImageDraw.Draw(image)
         timestamp = time()
         await ctx.reply("[C]Recopilando datos, un momento...")
@@ -2285,8 +2285,8 @@ async def on_stats(ctx: Context):
         draw.text((250, 1900), f"\n{data[0]['reboot']}", font=font2, fill="white", align="left")
         draw.text((2000, 1900), f"\n{data[0]['message']}", font=font2, fill="white", align="left")
         draw.text((1100, 2100), f"\n{time() - timestamp:.2f}s", font=font1, fill="white", align="left")
-        image.save("finalimage.jpg")
-        image = File.load("finalimage.jpg")
+        image.save("images/finalimage.jpg")
+        image = File.load("images/finalimage.jpg")
         
         media = await ctx.client.upload_media(image, "image/jpg")
         data = {
@@ -2683,8 +2683,8 @@ async def on_qr(ctx: Context, args: str):
             qrstring = args
 
             url = pyqrcode.create(qrstring)
-            url.png(r'qr.png', scale=8)
-            image = File.load("qr.png")
+            url.png(r'images/qr.png', scale=8)
+            image = File.load("images/qr.png")
             await ctx.send("Argumento detectado, generando código QR...")
             media = await ctx.client.upload_media(image, "image/jpg")
             data = {
@@ -3927,8 +3927,8 @@ async def on_bg_image_edit(ctx: Context):
             if ctx.msg.extensions.replyMessage is not None:
                 media_value = ctx.msg.extensions.replyMessage.mediaValue
                 if media_value is not None:
-                    urllib.request.urlretrieve(f"{media_value}", "icon_used.jpg")
-                    image = File.load("icon_used.jpg")
+                    urllib.request.urlretrieve(f"{media_value}", "images/icon_used.jpg")
+                    image = File.load("images/icon_used.jpg")
                     media = await ctx.client.upload_media(image, "image/jpg")
                     await ctx.client.edit_profile(background_image=media)
                     await ctx.send(f"[C]{system_messages[260]} - Foto de fondo aplicada con éxito.")
@@ -3974,8 +3974,8 @@ async def on_banner_edit(ctx: Context):
             if ctx.msg.extensions.replyMessage is not None:
                 media_value = ctx.msg.extensions.replyMessage.mediaValue
                 if media_value is not None:
-                    urllib.request.urlretrieve(f"{media_value}", "icon_used.jpg")
-                    image = File.load("icon_used.jpg")
+                    urllib.request.urlretrieve(f"{media_value}", "images/icon_used.jpg")
+                    image = File.load("images/icon_used.jpg")
                     media = await ctx.client.upload_media(image, "image/jpg")
                     await ctx.client.edit_profile(image_list=[media])
                     await ctx.send(f"[C]{system_messages[260]} - Foto de banner aplicada con éxito.")
@@ -3990,8 +3990,8 @@ async def on_icon_edit(ctx: Context):
             if ctx.msg.extensions.replyMessage is not None:
                 media_value = ctx.msg.extensions.replyMessage.mediaValue
                 if media_value is not None:
-                    urllib.request.urlretrieve(f"{media_value}", "icon_used.jpg")
-                    image = File.load("icon_used.jpg")
+                    urllib.request.urlretrieve(f"{media_value}", "images/icon_used.jpg")
+                    image = File.load("images/icon_used.jpg")
                     media = await ctx.client.upload_media(image, "image/jpg")
                     await ctx.client.edit_profile(icon=media)
                     await ctx.send(f"[C]{system_messages[260]} - Foto de perfil aplicada con éxito.")
@@ -5284,10 +5284,10 @@ async def on_blog_with_AI(ctx: Context):
             font = ImageFont.truetype("/storage/emulated/0/Download/THEBOLDFONT.ttf", 300)
             text = f"1"
             draw.text((850, 1740), f"{numberCount}\n\n", font=font, fill="white", align="center")
-            image.save("portadaBlog.jpg")
+            image.save("images/portadaBlog.jpg")
             
             title = f"{numberCount}. {msg.upper()} ~ || Mari-IA"
-            image = File.load("portadaBlog.jpg")
+            image = File.load("images/portadaBlog.jpg")
             image1 = File.load("/storage/emulated/0/Pictures/Picsart/Picsart_22-11-13_02-20-53-028.jpg")
             media = await ctx.client.upload_media(image, "image/jpg")
             media1 = await ctx.client.upload_media(image1, "image/jpg")
@@ -5485,14 +5485,14 @@ async def on_joke(ctx: Context):
 #        try:
 #            img = faker.image_url()
 #            url_imagen = img # El link de la imagen
-#            nombre_local_imagen = "img_random.jpg"
+#            nombre_local_imagen = "images/img_random.jpg"
 #            imagen = requests.get(url_imagen).content
 #            break
 #        except:
 #            try:
 #                img = faker.image_url()
 #                url_imagen = img # El link de la imagen
-#                nombre_local_imagen = "img_random.jpg" 
+#                nombre_local_imagen = "images/img_random.jpg" 
 #                imagen = requests.get(url_imagen).content
 #            except:
 #                a = False
@@ -5500,7 +5500,7 @@ async def on_joke(ctx: Context):
 #        
 #    with open(nombre_local_imagen, 'wb') as handler:
 #    	handler.write(imagen)
-#    image = File.load("img_random.jpg")
+#    image = File.load("images/img_random.jpg")
 #    media = await ctx.client.upload_media(image, "image/jpg")
 #    data = {
 #                        "content": None,
@@ -5529,12 +5529,12 @@ async def on_verify_bot(ctx: Context):
         texto = vericode
         captcha_text = texto
         data = image.generate(captcha_text)
-        image.write(captcha_text, "captcha.png")
-        img = Image.open('captcha.png')
+        image.write(captcha_text, "images/captcha.png")
+        img = Image.open('images/captcha.png')
         img_resized = img.resize((780, 200))
-        img_resized.save("captcha.png")
+        img_resized.save("images/captcha.png")
         
-        img = File.load("captcha.png")
+        img = File.load("images/captcha.png")
         imageId = await ctx.client.upload_media(img, content_type = "image/png")
         embed = api.LinkSnippet(
             link = imageId,
@@ -5988,7 +5988,7 @@ async def on_wikipedia_article(ctx: Context, args: str):
             except IndexError:
                 await ctx.reply(f"[C]{system_messages[60]} - Debes escribir el título y contenido separados por un salto de línea. \n\n[C]Ejemplo: \n+wiki Cleopatra\nFaraona del antiguo Egipto.")
             
-            image = Image.open('wiki.jpg')
+            image = Image.open('images/wiki.jpg')
             draw = ImageDraw.Draw(image)
 
             font1 = ImageFont.truetype("/storage/emulated/0/Download/times new roman.ttf", 56)
@@ -5997,8 +5997,8 @@ async def on_wikipedia_article(ctx: Context, args: str):
             font2 = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Regular.ttf", 35)
             draw.text((30, 475), f"{article[0:33]}\n{article[33:66]}\n{article[66:99]}\n{article[99:132]}\n{article[132:165]}\n{article[165:198]}\n{article[198:231]}\n{article[231:264]}\n{article[264:297]}\n{article[297:330]}\n{article[330:363]}\n{article[363:396]}", font=font2, fill="black", align="left")
 
-            image.save("finalimage.png")
-            wikipedia = File.load("finalimage.png")
+            image.save("images/finalimage.png")
+            wikipedia = File.load("images/finalimage.png")
             media = await ctx.client.upload_media(wikipedia, "image/jpg")
             data = {
                         "content": None,
@@ -6022,7 +6022,7 @@ async def on_youtube_comment(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         print(f"{ctx.msg.content}")
-        images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "iconimage.jpg")
+        images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "images/iconimage.jpg")
         
         if args:
             try:
@@ -6030,27 +6030,27 @@ async def on_youtube_comment(ctx: Context, args: str):
                 mask = Image.new('L', size, 0)
                 draw = ImageDraw.Draw(mask)
                 draw.ellipse((0, 0) + size, fill=255)
-                img = Image.open('iconimage.jpg')
+                img = Image.open('images/iconimage.jpg')
                 output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
                 output.putalpha(mask)
-                output.save('salida.png')
+                output.save('images/salida.png')
             except:
                 size = (512, 512)
                 mask = Image.new('L', size, 0)
                 draw = ImageDraw.Draw(mask)
                 draw.ellipse((0, 0) + size, fill=255)
-                img = Image.open('photo.jpg')
+                img = Image.open('images/photo.jpg')
                 output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
                 output.putalpha(mask)
-                output.save('salida.png')
+                output.save('images/salida.png')
 
-            img1 = Image.open('salida.png')
-            img2 = Image.open('youtube.jpg')
+            img1 = Image.open('images/salida.png')
+            img2 = Image.open('images/youtube.jpg')
             img1_size = img1.resize((170, 170))
             img2.paste(img1_size, (38, 16), img1_size)
-            img2.save("def.png")
+            img2.save("images/def.png")
 
-            image = Image.open("def.png")
+            image = Image.open("images/def.png")
             draw = ImageDraw.Draw(image)
 
             font1 = ImageFont.truetype("/storage/emulated/0/Download/arial.ttf", 56)
@@ -6059,9 +6059,9 @@ async def on_youtube_comment(ctx: Context, args: str):
             font2 = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Regular.ttf", 45)
             draw.text((290, 180), f"{args[0:35]}\n{args[35:70]}\n{args[70:105]}\n{args[105:140]}", font=font2, fill="white", align="left")
 
-            image.save("finalimage.png")
+            image.save("images/finalimage.png")
             
-            youtube_comment = File.load("finalimage.png")
+            youtube_comment = File.load("images/finalimage.png")
             media = await ctx.client.upload_media(youtube_comment, "image/jpg")
             data = {
                         "content": None,
@@ -6086,7 +6086,7 @@ async def on_instagram(ctx: Context):
         print("USUARIO VETADO")
     else:
         print(f"{ctx.msg.content}")
-        images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "iconimage.jpg")
+        images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "images/iconimage.jpg")
         get = await ctx.get_from_id(object_id = ctx.msg.uid, object_type = 0)
         linkin = get.shareURLShortCode
         
@@ -6110,28 +6110,28 @@ async def on_instagram(ctx: Context):
             mask = Image.new('L', size, 0)
             draw = ImageDraw.Draw(mask)
             draw.ellipse((0, 0) + size, fill=255)
-            img = Image.open('iconimage.jpg')
+            img = Image.open('images/iconimage.jpg')
             output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
             output.putalpha(mask)
-            output.save('salida.png')
+            output.save('images/salida.png')
         except:
             size = (512, 512)
             mask = Image.new('L', size, 0)
             draw = ImageDraw.Draw(mask)
             draw.ellipse((0, 0) + size, fill=255)
-            img = Image.open('photo.jpg')
+            img = Image.open('images/photo.jpg')
             output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
             output.putalpha(mask)
-            output.save('salida.png')
+            output.save('images/salida.png')
             
 
-        img1 = Image.open('salida.png')
-        img2 = Image.open('insta.jpg')
+        img1 = Image.open('images/salida.png')
+        img2 = Image.open('images/insta.jpg')
         img1_size = img1.resize((170, 170))
         img2.paste(img1_size, (36, 125), img1_size)
-        img2.save("def.png")
+        img2.save("images/def.png")
 
-        image = Image.open("def.png")
+        image = Image.open("images/def.png")
         draw = ImageDraw.Draw(image)
         font = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Bold.ttf", 35)
         font1 = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Bold.ttf", 26)
@@ -6140,8 +6140,8 @@ async def on_instagram(ctx: Context):
         font2 = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Regular.ttf", 26)
         draw.text((36, 340), f"— {bio[0:40]}\n— {bio0[0:40]}", font=font2, fill="white", align="left")
         draw.text((36, 440), f"{linkin}", font=font2, fill="lightblue", align="left")
-        image.save("finalimage.png")
-        instagram = File.load("finalimage.png")
+        image.save("images/finalimage.png")
+        instagram = File.load("images/finalimage.png")
         media = await ctx.client.upload_media(instagram, "image/jpg")
         data = {
                         "content": None,
@@ -6179,7 +6179,7 @@ async def on_tiktok(ctx: Context):
         print("USUARIO VETADO")
     else:
         print(f"{ctx.msg.content}")
-        images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "iconimage.jpg")
+        images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "images/iconimage.jpg")
         fake = Faker()
         name = fake.name()
         bio = fake.text()
@@ -6198,28 +6198,28 @@ async def on_tiktok(ctx: Context):
             mask = Image.new('L', size, 0)
             draw = ImageDraw.Draw(mask)
             draw.ellipse((0, 0) + size, fill=255)
-            img = Image.open('iconimage.jpg')
+            img = Image.open('images/iconimage.jpg')
             output = ImageOps.fit(img, mask.size, centering=(0.5, 0.5))
             output.putalpha(mask)
-            output.save('salida.png')
+            output.save('images/salida.png')
         except:
             size = (512, 512)
             mask = Image.new('L', size, 0)
             draw = ImageDraw.Draw(mask)
             draw.ellipse((0, 0) + size, fill=255)
-            img = Image.open('photo.jpg')
+            img = Image.open('images/photo.jpg')
             output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
             output.putalpha(mask)
-            output.save('salida.png')
-            img1 = Image.open('salida.png')
+            output.save('images/salida.png')
+            img1 = Image.open('images/salida.png')
 
-        img1 = Image.open('salida.png')
-        img2 = Image.open('tiktok.jpg')
+        img1 = Image.open('images/salida.png')
+        img2 = Image.open('images/tiktok.jpg')
         img1_size = img1.resize((210, 210))
         img2.paste(img1_size, (255, 120),img1_size)
-        img2.save("def.png")
+        img2.save("images/def.png")
 
-        image = Image.open("def.png")
+        image = Image.open("images/def.png")
         draw = ImageDraw.Draw(image)
         font = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Bold.ttf", 26)
         link = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Regular.ttf", 26)
@@ -6229,8 +6229,8 @@ async def on_tiktok(ctx: Context):
         font2 = ImageFont.truetype("/storage/emulated/0/Download/arial.ttf", 26)
         draw.text((100, 620), f"{bio[0:48]}...", font=font2, fill="gray", align="center")
         draw.text((120, 670), f"{linkin}", font=link, fill="black", align="center")
-        image.save("finalimage.png")
-        tiktok = File.load("finalimage.png")
+        image.save("images/finalimage.png")
+        tiktok = File.load("images/finalimage.png")
         await send_image(ctx, tiktok)
 
 
@@ -6246,36 +6246,36 @@ async def on_tweet(ctx: Context, args: str):
             name = fake.name()
             name = name.replace(" ", "_")
 
-            images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "iconimage.jpg")
+            images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "images/iconimage.jpg")
             try:
                 size = (512, 512)
                 mask = Image.new('L', size, 0)
                 draw = ImageDraw.Draw(mask)
                 draw.ellipse((0, 0) + size, fill=255)
-                img = Image.open('iconimage.jpg')
+                img = Image.open('images/iconimage.jpg')
                 output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
                 output.putalpha(mask)
-                output.save('salida.png')
-                img1 = Image.open('salida.png')
+                output.save('images/salida.png')
+                img1 = Image.open('images/salida.png')
             except:
                 size = (512, 512)
                 mask = Image.new('L', size, 0)
                 draw = ImageDraw.Draw(mask)
                 draw.ellipse((0, 0) + size, fill=255)
-                img = Image.open('photo.jpg')
+                img = Image.open('images/photo.jpg')
                 output = ImageOps.fit(img, mask.size,centering=(0.5, 0.5))
                 output.putalpha(mask)
-                output.save('salida.png')
-                img1 = Image.open('salida.png')
+                output.save('images/salida.png')
+                img1 = Image.open('images/salida.png')
             
 
             
-            img2 = Image.open('tweet.png')
+            img2 = Image.open('images/tweet.png')
             img1_size = img1.resize((150, 150))
             img2.paste(img1_size, (60, 40), img1_size)
-            img2.save("def.png")
+            img2.save("images/def.png")
 
-            image = Image.open("def.png")
+            image = Image.open("images/def.png")
             draw = ImageDraw.Draw(image)
             font = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Bold.ttf", 40)
             font1 = ImageFont.truetype("/storage/emulated/0/Download/NotoSans-Regular.ttf", 30)
@@ -6283,9 +6283,9 @@ async def on_tweet(ctx: Context, args: str):
             draw.text((230, 100), f"@{name}", font=font1, fill="gray", align="center")
             font2 = ImageFont.truetype("/storage/emulated/0/Download/arial.ttf", 90)
             draw.text((80, 200), f"{args[0:26]}\n{args[26:]}", font=font2, fill="black", align="left")
-            image.save("finalimage.png")
+            image.save("images/finalimage.png")
             
-            tweet = File.load("finalimage.png")
+            tweet = File.load("images/finalimage.png")
             await send_image(ctx, tweet)
         else:
             await ctx.reply(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -6348,7 +6348,7 @@ async def on_size(ctx: Context, args: str):
         print("USUARIO VETADO")
     else:
         if args:
-            image = Image.open("medidor.jpg")
+            image = Image.open("images/medidor.jpg")
             draw = ImageDraw.Draw(image)
 
             font = ImageFont.truetype("/storage/emulated/0/Download/LEMONMILK-Regular.otf", 150)
@@ -6370,8 +6370,8 @@ async def on_size(ctx: Context, args: str):
 
             draw.text((200, 330), f"{text}%", font=font, fill="white", align="center")
 
-            image.save("medidor1.jpg")
-            final_image = File.load("medidor1.jpg")
+            image.save("images/medidor1.jpg")
+            final_image = File.load("images/medidor1.jpg")
             await send_image(ctx, final_image)
         else:
             await ctx.send(f"[C]{system_messages[180]} - Debes escribir algo después del comando.")
@@ -6386,7 +6386,7 @@ async def on_size_penis(ctx: Context, args: str):
         var = ctx.msg.ndcId
         if var == 234290104 or var == 98979567 or var == 251457827 or var == 27632084 or var == 47024732:
             if args:
-                image = Image.open("medirpene.jpg")
+                image = Image.open("images/medirpene.jpg")
                 draw = ImageDraw.Draw(image)
 
                 font = ImageFont.truetype("/storage/emulated/0/Download/leadcoat.ttf", 200)
@@ -6397,11 +6397,11 @@ async def on_size_penis(ctx: Context, args: str):
 
                 draw.text((180, 350), f"{sizepenis}cm", font=font, fill="black", align="center")
 
-                image.save("medirpene1.jpg")
-                final_image = File.load("medirpene1.jpg")
+                image.save("images/medirpene1.jpg")
+                final_image = File.load("images/medirpene1.jpg")
                 await send_image(ctx, final_image)
             else:
-                image = Image.open("medirpene.jpg")
+                image = Image.open("images/medirpene.jpg")
                 draw = ImageDraw.Draw(image)
 
                 font = ImageFont.truetype("/storage/emulated/0/Download/leadcoat.ttf", 200)
@@ -6413,8 +6413,8 @@ async def on_size_penis(ctx: Context, args: str):
 
                 draw.text((180, 350), f"{sizepenis}cm", font=font, fill="black", align="center")
 
-                image.save("medirpene1.jpg")
-                final_image = File.load("medirpene1.jpg")
+                image.save("images/medirpene1.jpg")
+                final_image = File.load("images/medirpene1.jpg")
                 await send_image(ctx, final_image)
         else:
             await ctx.send(f"[C]{system_messages[40]} - Comando previamente deshabilitado.")
@@ -6433,8 +6433,8 @@ async def on_jaja_lo_humillaron(ctx: Context):
         
         
         if ctx.msg.extensions.replyMessage is not None:
-            images0 = urllib.request.urlretrieve(f"{ctx.msg.extensions.replyMessage.author.icon}", "iconimg.jpg")
-            img1 = Image.open("iconimg.jpg")
+            images0 = urllib.request.urlretrieve(f"{ctx.msg.extensions.replyMessage.author.icon}", "images/iconimg.jpg")
+            img1 = Image.open("images/iconimg.jpg")
             img.size
             img1.size
             img_size = img.resize((250, 90))
@@ -6449,13 +6449,13 @@ async def on_jaja_lo_humillaron(ctx: Context):
 
             img2.paste(img_size, (0, 250))
   
-            img2.save("imagee.png")
-            imagedef = File.load("imagee.png")
+            img2.save("images/imagee.png")
+            imagedef = File.load("images/imagee.png")
         
             await send_image(ctx, imagedef)
         else:
-            images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "iconimg.jpg")
-            img1 = Image.open("iconimg.jpg")
+            images0 = urllib.request.urlretrieve(f"{ctx.msg.author.icon}", "images/iconimg.jpg")
+            img1 = Image.open("images/iconimg.jpg")
             img.size
             img1.size
             img_size = img.resize((250, 90))
@@ -6470,8 +6470,8 @@ async def on_jaja_lo_humillaron(ctx: Context):
 
             img2.paste(img_size, (0, 250))
   
-            img2.save("imagee.png")
-            imagedef = File.load("imagee.png")
+            img2.save("images/imagee.png")
+            imagedef = File.load("images/imagee.png")
         
             await send_image(ctx, imagedef)
             
@@ -6486,8 +6486,8 @@ async def on_captcha(ctx: Context, args: str):
             texto = args
             captcha_text = texto
             data = image.generate(captcha_text)
-            image.write(captcha_text, "captcha.png")
-            img = File.load("captcha.png")
+            image.write(captcha_text, "images/captcha.png")
+            img = File.load("images/captcha.png")
             await ctx.reply("Argumento detectado, generando Captcha...")
             await send_image(ctx, img)
         else:
