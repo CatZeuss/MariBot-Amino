@@ -792,7 +792,7 @@ bot = Bot(email="E-MAIL DEL BOT", password="CONTRASEÑA DEL BOT", prefix="+") #I
 
 
 #importar la lista de usuarios vetados del uso del bot
-filenames = "db_vetedlist.json"
+filenames = "databases/db_vetedlist.json"
 with open(filenames, "r") as file:
     data = json.load(file)
 veted_list = data[0]
@@ -876,7 +876,7 @@ async def on_ready(profile: UserProfile):
     print('INFO: '+Style.BRIGHT+Fore.BLUE+Back.WHITE+'Mari-Bot en funcionamiento (READY)'+Back.RESET+Fore.RESET+Style.NORMAL)
     await mec('============================')
     
-    filename = "db_antispam.json"
+    filename = "databases/db_antispam.json"
     with open(filename, "r") as file:
         data = json.load(file)
             
@@ -962,7 +962,7 @@ spamcode = {
 #NAUTILUS-SYS: FUNCIONALIDAD DE MODERACIÓN QUE PERMITE BANEAR A BOTS DE SPAM REVISANDO MIEMBROS UNIDOS RECIENTEMENTE.
 @bot.event()
 async def nautilus_system(self):
-    filename = "db_nicksban.json"
+    filename = "databases/db_nicksban.json"
     with open(filename, "r") as file:
         names = json.load(file)
     if "nautilus" in self.msg.content.lower():
@@ -1037,7 +1037,7 @@ async def identt(ctx: Context):
                     await ctx.send("[CI]Spam detectado, por favor, envíe el link del responsable.")
                     russian = await identify_spam(url=media_value, language="rus", ocr_engine=3)
                     
-                    filename = "db_msg_spammer.json"
+                    filename = "databases/db_msg_spammer.json"
                     with open(filename, "r") as file:
                         data = json.load(file)
             
@@ -1056,7 +1056,7 @@ async def identt(ctx: Context):
 #EXPLICACIÓN RÁPIDA DE ÉSTA FUNCIONALIDAD: ÉSTE EVENTO VIENE INTEGRADO AL ANTERIOR Y PERMITE ATENDER UN REPORTE POR MEDIO DEL ENVÍO DEL LINK DE UN INFRACTOR POR CHAT AL BOT.           
 @bot.event()
 async def on_link_from_spammer(ctx: Context):
-    with open("db_nicksban.json", "r") as file:
+    with open("databases/db_nicksban.json", "r") as file:
          names = json.load(file)
     content = ctx.msg.content.lower()
     if "aminoapps.com/p" in content:
@@ -1078,7 +1078,7 @@ async def on_link_from_spammer(ctx: Context):
         except:
             pass
         
-        filename = "db_msg_spammer.json"
+        filename = "databases/db_msg_spammer.json"
         with open(filename, "r") as file:
             data = json.load(file)
         try:
@@ -1093,14 +1093,14 @@ async def on_link_from_spammer(ctx: Context):
 @bot.event([api.MessageType.ALL])
 async def on_crash_script(self):
     if crash_script_text in self.msg.content or "💥💻💥💻💥💻💥💻" in self.msg.content:
-        filename = "db_noban.json"
+        filename = "databases/db_noban.json"
         uid = self.msg.uid
         with open(filename, "r") as file:
             info = json.load(file)
         if uid in info[0]:
             print(" ")
         else:
-            filename = "db_antispam.json"
+            filename = "databases/db_antispam.json"
             with open(filename, "r") as file:
                 data = json.load(file)
             
@@ -1129,7 +1129,7 @@ async def on_member_join(self, size: int = 5, allow_rejoin: bool = False):
     nick = self.msg.author.nickname
     icon = self.msg.author.icon
     nickl = nick.lower()
-    filename = "db_nicksban.json"
+    filename = "databases/db_nicksban.json"
     with open(filename, "r") as file:
         data = json.load(file)
         
@@ -1138,7 +1138,7 @@ async def on_member_join(self, size: int = 5, allow_rejoin: bool = False):
     print(f"{nick} se unió.")
     if "mambll" in nickl or "19cent" in nickl or "piar-bot" in nickl or "42ix" in nickl or "42lx" in nickl or "0)0)" in nickl or "мотя" in nickl or "ебла" in nickl or "тоже хочу кушать" in nickl or "смена админки" in nickl or "tcxehbot" in nickl or "o.bots" in nickl or "bot.exe" in nickl or "фщжоываж" in nickl or "ᴍᴀᴍʙʟʟ" in nickl or "coin_pub" in nickl or "чооооо" in nickl or "wayme" in nickl or "отключаем" in nickl or "ⴽɈƝ" in nick or "cult_of_komaru" in nickl or "кабанчик‬‭" in nickl or "весело" in nickl or "𝐗𝐋𝐈𝐈𝟒𝟐‬‭" in nick or "111111111111" in nickl or "азбаннер‬‭" in nickl or "Foxy" == nick or "заработать‬‭" in nickl or "Ваш ник" in nick or "hank comeme" in nickl or "TeaFO" in nick or nick in data[0] or icon is None:
         
-        filename = "db_antispam.json"
+        filename = "databases/db_antispam.json"
         with open(filename, "r") as file:
             data = json.load(file)
             
@@ -1357,7 +1357,7 @@ async def on_member_join(self, size: int = 5, allow_rejoin: bool = False):
 #EVENTO CREADO EXCEPCIONALMENTE PARA HACER FRENTE A UN TIPO DE SPAMBOT ESPECÍFICO
 @bot.event()
 async def on_o_bots(self):
-    filename = "db_antispam.json"
+    filename = "databases/db_antispam.json"
     with open(filename, "r") as file:
         data = json.load(file)
             
@@ -1381,7 +1381,7 @@ async def on_o_bots(self):
 @bot.event([api.MessageType.AVATAR_CHAT_START, api.MessageType.VIDEO_CHAT_START])
 async def on_danger_raid(self):
     
-    filename1 = "db_noban.json"
+    filename1 = "databases/db_noban.json"
     uid = self.msg.uid
     with open(filename1, "r") as file:
         info = json.load(file)
@@ -1390,7 +1390,7 @@ async def on_danger_raid(self):
     else:
             
             
-        filename = "db_antispam.json"
+        filename = "databases/db_antispam.json"
         with open(filename, "r") as file:
             data = json.load(file)
             
@@ -1436,7 +1436,7 @@ async def on_spam_detector(self):
     text = self.msg.content
     low = text.lower()
     role = self.msg.author.role
-    filename1 = "db_noban.json"
+    filename1 = "databases/db_noban.json"
     with open(filename1, "r") as file:
         info = json.load(file)
     if self.msg.uid in info[0] or role == 101 or role == 102 or role == 100:
@@ -2131,7 +2131,7 @@ async def on_security_system_info(ctx: Context):
 
 @bot.command(["stars", "estrellas"])
 async def on_stars(ctx: Context):
-    filename = "db_stars.json"
+    filename = "databases/db_stars.json"
     
     with open(filename, "r") as file:
         data = json.load(file)
@@ -2201,7 +2201,7 @@ async def on_valorate(ctx: Context):
         print("USUARIO VETADO")
     else:
         print(f"{ctx.msg.content} usado por {ctx.msg.author.nickname}")
-        filename = "db_stars.json"
+        filename = "databases/db_stars.json"
         stars = ctx.msg.content.split(" ")[1:2]
         stars = " ".join(stars)
         value = ctx.msg.content.split(" ")[2:]
@@ -2337,7 +2337,7 @@ async def on_new(ctx: Context):
         print("USUARIO VETADO")
     else:
         print(f"{ctx.msg.content}")
-        filename = "db_newsbot.json"
+        filename = "databases/db_newsbot.json"
         with open(filename, "r") as file:
             data = json.load(file)
         novedad = data[0]["message"]
@@ -2453,7 +2453,7 @@ async def on_lottery(ctx: Context):
         
         uid = ctx.msg.uid
         today = strftime('%d/%m') 
-        filename = "db_authDay_coins.json"
+        filename = "databases/db_authDay_coins.json"
         with open(filename, "r") as file:
             data = json.load(file)
         reject = 0
@@ -2525,10 +2525,10 @@ async def ocr_exec(filename, overlay=False, api_key=APIKEY_OCR, language='spa', 
                           data=payload,
                           )
         decoded = r.content.decode()
-        file = open("db_ocr.json", "w")
+        file = open("databases/db_ocr.json", "w")
         file.write(decoded)
         file.close()
-        with open("db_ocr.json", "r") as file:
+        with open("databases/db_ocr.json", "r") as file:
             data_info = json.load(file)
         result = data_info["ParsedResults"][0]["ParsedText"]
         return result
@@ -2850,7 +2850,7 @@ async def on_my_bday(self):
         print("USUARIO VETADO")
     else:
         print(f"{self.msg.content}")
-        birthdayFile = 'db_birthdays.json'
+        birthdayFile = 'databases/db_birthdays.json'
         uid = self.msg.uid
         with open(birthdayFile, 'r') as file:
             data = json.load(file)
@@ -2869,7 +2869,7 @@ async def on_bday_delete(self):
         print("USUARIO VETADO")
     else:
         print(f"{self.msg.content}")
-        birthdayFile = 'db_birthdays.json'
+        birthdayFile = 'databases/db_birthdays.json'
         uid = self.msg.uid
         with open(birthdayFile, 'r') as file:
             data = json.load(file)
@@ -2888,7 +2888,7 @@ async def on_bday_check(self):
         print("USUARIO VETADO")
     else:
         print(f"{self.msg.content}")
-        birthdayFile = 'db_birthdays.json'
+        birthdayFile = 'databases/db_birthdays.json'
         today = strftime('%d/%m') 
         with open(birthdayFile, 'r') as file:
             data = json.load(file)
@@ -2922,7 +2922,7 @@ async def on_bday_add(self):
         print("USUARIO VETADO")
     else:
         print(f"{self.msg.content}")
-        birthdayFile = 'db_birthdays.json'
+        birthdayFile = 'databases/db_birthdays.json'
 
         dat = self.msg.content.split(" ")[1:]
         date = " ".join(dat)
@@ -2952,7 +2952,7 @@ async def on_stats(ctx: Context):
         print("USUARIO VETADO")
     else:
         print(ctx.msg.content)
-        filename = "db_antispam.json"
+        filename = "databases/db_antispam.json"
         with open(filename, "r") as file:
             data = json.load(file)
         scripters = data[0]["scripter"] + data[0]["iplogger"]
@@ -4239,7 +4239,7 @@ async def on_ban(self):
         
         
         
-        filename = "db_antispam.json"
+        filename = "databases/db_antispam.json"
         with open(filename, "r") as file:
             data = json.load(file)
             
@@ -4517,7 +4517,7 @@ async def on_purge(self, size: int = 100, allow_rejoin: bool = False):
                         
                    
                     print(Fore.RED+"SCRIPTER BANNED"+Fore.RESET)
-                    filename = "db_antispam.json"
+                    filename = "databases/db_antispam.json"
                     with open(filename, "r") as file:
                         data = json.load(file)
             
@@ -4569,7 +4569,7 @@ async def on_banuseruid(ctx: Context):
         uid = info.linkInfo.objectId
         faker = Faker()
         codeban = faker.swift8()
-        filename = "db_vetedlist.json"
+        filename = "databases/db_vetedlist.json"
         with open(filename, "r") as filety:
             dataset = json.load(filety)
         dataset[0][uid] = codeban
@@ -4692,7 +4692,7 @@ async def on_register_news(ctx: Context):
             content = ctx.msg.content.split(" ")[1:]
             contenido = " ".join(content)
             fecha = strftime('%d/%m/%y') 
-            filename = "db_newsbot.json"
+            filename = "databases/db_newsbot.json"
             with open(filename, "r") as file:
                 data = json.load(file)
                 
@@ -4724,7 +4724,7 @@ async def on_forbbiden_nicknames(self):
             faker = Faker()
             codeban = faker.swift8()
             
-            filename = "db_nicksban.json"
+            filename = "databases/db_nicksban.json"
             with open(filename, "r") as file:
                 data = json.load(file)
                 
@@ -4760,7 +4760,7 @@ async def on_forbbiden_communities(ctx: Context, link: str):
                 
                 ndc_id = str(ndc_idd)
             
-                filename = "db_forbbiden.txt"
+                filename = "databases/db_forbbiden.txt"
                 with open(filename, "r") as file:
                     data = file.read()
                     
@@ -4789,7 +4789,7 @@ async def on_asign_new_bot(ctx: Context):
         code = faker.swift8()
         if ctx.msg.extensions.mentionedArray is not None:
             uid = ctx.msg.extensions.mentionedArray[0].uid
-            filename = "db_noban.json"
+            filename = "databases/db_noban.json"
             with open(filename, "r") as file:
                 data = json.load(file)
                 
@@ -4810,7 +4810,7 @@ async def on_asign_new_bot(ctx: Context):
             try:
                 info = await ctx.get_info_link(link)
                 uid = info.linkInfo.objectId
-                filename = "db_noban.json"
+                filename = "databases/db_noban.json"
                 with open(filename, "r") as file:
                     data = json.load(file)
                 
@@ -4862,7 +4862,7 @@ async def on_join_community(ctx: Context):
                 link_id = get.community.ndcId
                 ndcId = str(link_id)
                 
-                filename = "db_forbbiden.txt"
+                filename = "databases/db_forbbiden.txt"
                 with open(filename, "r") as file:
                     data = file.read()
                 if ndcId in data:
@@ -5948,7 +5948,7 @@ async def on_blog_with_AI(ctx: Context):
 [CI]Redacción generada a base de inteligencia artificial.
             """
             await ctx.send("[C]Preparando archivos...")
-            filename = "db_count_blogs.json"
+            filename = "databases/db_count_blogs.json"
             with open(filename, "r") as file:
                 data = json.load(file)
             if ndc in data[0]:
@@ -6035,7 +6035,7 @@ async def on_chat_AI(ctx: Context):
 #HISTORIA  (A.I)
 @bot.command("historia")
 async def on_cuento(ctx: Context):
-    filename = "db_vetedlist.json"
+    filename = "databases/db_vetedlist.json"
     with open(filename, "r") as filein:
         datas = json.load(filein)
     veted_list = datas[0]
@@ -6081,7 +6081,7 @@ async def on_cuento(ctx: Context):
 #COMEDY STORY
 @bot.command("comedy")
 async def on_cockmedy(ctx: Context):
-    filename = "db_vetedlist.json"
+    filename = "databases/db_vetedlist.json"
     with open(filename, "r") as filein:
         datas = json.load(filein)
     veted_list = datas[0]
@@ -6581,7 +6581,7 @@ async def on_alias(ctx: Context, args: str):
     else:
         print(f"{ctx.msg.content}")
         if ctx.msg.extensions.replyMessage is not None:
-            filename = 'db_alias.json'
+            filename = 'databases/db_alias.json'
             uid = ctx.msg.extensions.replyMessage.uid
             alias = args
             with open(filename, "r") as file:
@@ -6604,7 +6604,7 @@ async def on_alias(ctx: Context, args: str):
                 
             await ctx.reply(f"[C]Listo, su nuevo alias será {alias}")
         else:
-            filename = "db_alias.json"
+            filename = "databases/db_alias.json"
             uid = ctx.msg.uid
             alias = args
             with open(filename, "r") as file:
@@ -6632,7 +6632,7 @@ async def on_alias(ctx: Context, args: str):
 #VER ALIAS
 @bot.command("myalias")
 async def on_my_alias(ctx: Context):
-    alias_name = "db_alias.json"
+    alias_name = "databases/db_alias.json"
     with open(alias_name, "r") as file:
         alias = json.load(file)
     try:
@@ -6647,7 +6647,7 @@ async def on_bday_delete(self):
         print("USUARIO VETADO")
     else:
         print(f"{self.msg.content}")
-        filename = 'db_alias.json'
+        filename = 'databases/db_alias.json'
         uid = self.msg.uid
         with open(filename, 'r') as file:
             data = json.load(file)
