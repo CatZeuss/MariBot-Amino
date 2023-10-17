@@ -6429,7 +6429,7 @@ async def on_jaja_lo_humillaron(ctx: Context):
         
         print("USUARIO VETADO")
     else:
-        img = Image.open("Globito.jpeg")
+        img = Image.open("images/Globito.jpeg")
         
         
         if ctx.msg.extensions.replyMessage is not None:
